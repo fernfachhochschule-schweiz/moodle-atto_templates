@@ -19,6 +19,7 @@
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @author    2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -65,6 +66,9 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     _content: null,
     _templates: [],
     initializer: function() {
+        if (!this.get('enablebutton')) {
+            return;
+        }
         this.addButton({
             icon: 'icon',
             iconComponent: COMPONENTNAME,
@@ -148,6 +152,9 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     ATTRS: {
         templates: {
             value: {}
+        },
+        enablebutton: {
+            value: false
         }
     }
 });

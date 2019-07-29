@@ -19,6 +19,7 @@
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @author    2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,9 +31,17 @@ if (!defined('ATTO_TEMPLATES_TEMPLATE_COUNT')) {
 
 if (is_siteadmin()) {
     $config = get_config('atto_templates');
+
     $ADMIN->add('editoratto', new admin_category('atto_templates', new lang_string('pluginname', 'atto_templates')));
 
     $settings = new admin_settingpage('atto_templates_settings', new lang_string('settings', 'atto_templates'));
+    $setting = new admin_setting_configcheckbox('atto_templates/requireedit',
+            get_string('requireedit', 'atto_templates'),
+            get_string('requireedit_desc', 'atto_templates'),
+            0);
+
+    $settings->add($setting);
+
     $settings->add(new admin_setting_configtext('atto_templates/templatecount',
         get_string('templatecount', 'atto_templates'),
         get_string('templatecount_desc', 'atto_templates'),

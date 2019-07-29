@@ -19,6 +19,7 @@
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @author    2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -48,6 +49,12 @@ function atto_templates_strings_for_js() {
  * @return array List of templates
  */
 function atto_templates_params_for_js($elementid, $options, $fpoptions) {
+    $context = $options['context'];
+    if (!$context) {
+        $context = context_system::instance();
+    }
+    $enablebutton = !get_config('atto_templates', 'requireedit') || has_capability('moodle/course:manageactivities', $context);
+
     $templates = get_config('atto_templates');
     $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES_TEMPLATE_COUNT;
     $items = [];
@@ -61,7 +68,7 @@ function atto_templates_params_for_js($elementid, $options, $fpoptions) {
             $items[] = $item;
         }
     }
-    return array('templates' => $items);
+    return array('templates' => $items, 'enablebutton' => $enablebutton);
 }
 
 /**

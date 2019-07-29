@@ -19,6 +19,7 @@
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @author    2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -47,3 +48,5 @@ $string['templatestyle'] = 'Custom CSS (template {$a})';
 $string['templatestyle_desc'] = 'Enter any custom CSS that your template uses here. Template variables will not work here. Just plain old css.';
 
 $string['privacy:metadata'] = 'The atto_templates plugin does not store any personal data.';
+$string['requireedit_desc'] = 'Require capability to manage activities before showing templates button';
+$string['requireedit'] = 'Require editing';
