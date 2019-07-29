@@ -19,13 +19,14 @@
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @author    2019 Adrian Perez, Fernfachhochschule Schweiz (FFHS) <adrian.perez@ffhs.ch>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->component = 'atto_templates';
-$plugin->version = 2018041301;
-$plugin->release = '3.4.2';
+$plugin->version = 2019072900;
+$plugin->release = '3.4.3';
 $plugin->requires = 2017111302;
 $plugin->maturity = MATURITY_STABLE;
