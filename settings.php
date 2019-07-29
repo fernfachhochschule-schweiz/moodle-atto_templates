@@ -71,7 +71,7 @@ if (is_siteadmin()) {
         $settings->add(new admin_setting_configtext('atto_templates/templatekey_' . $i ,
             get_string('templatekey', 'atto_templates', $i),
             get_string('templatekey_desc', 'atto_templates'),
-            '', PARAM_ALPHANUMEXT));
+            ''));
 
         // Template body.
         $settings->add(new admin_setting_configtextarea('atto_templates/template_' . $i,
